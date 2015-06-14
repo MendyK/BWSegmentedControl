@@ -40,8 +40,14 @@
                                         CGRectGetMidY(frame),
                                         CGRectGetWidth(frame),
                                         88);
+    [segmentedControl addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segmentedControl];
     
+}
+
+- (void)tapped: (BWSegmentedControl *)segmentedControl{
+    NSLog(@"Changed to %lu", (unsigned long)segmentedControl.selectedItemIndex);
+
 }
 
 - (void)didReceiveMemoryWarning {

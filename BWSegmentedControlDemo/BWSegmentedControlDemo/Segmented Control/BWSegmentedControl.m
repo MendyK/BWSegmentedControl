@@ -78,7 +78,7 @@
     [self setSelectedItemIndex:0 animated:NO moveIndicator:NO];
 
     
-    /* Create top rect (Eventuallly)
+    /* Create top rect (eventuallly)
      
      CAShapeLayer *topLayer = [[CAShapeLayer alloc]init];
      topLayer.frame = self.topRect;
@@ -128,16 +128,19 @@
 - (void)tapGestureRecognized: (UITapGestureRecognizer *)tapGestureRecognizer{
     CGPoint location = [tapGestureRecognizer locationInView:self];
     
-    for (BWSegment *item in self.items) {
-        
-        if (CGRectContainsPoint(item.frame, location)) {
-            NSUInteger selectedItemIndex = [self.items indexOfObject:item];
-
-            [self setSelectedItemIndex:selectedItemIndex animated:YES];
-            [self sendActionsForControlEvents:UIControlEventValueChanged];
-
+        for (NSUInteger index = 0; index < [self.items count]; index++) {
+            
+            BWSegment *item = self.items[index];
+            if (CGRectContainsPoint(item.frame, location)) {
+                
+                if (index != self.selectedItemIndex) {
+                    [self setSelectedItemIndex:index animated:YES];
+                    [self sendActionsForControlEvents:UIControlEventValueChanged];
+                }
+            }
         }
-    }
+        
+
 }
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)panGestureRecognizer {
@@ -164,9 +167,14 @@
             
             if (CGRectContainsPoint(item.frame, self.selectedItemIndicator.center)) {
                 
-                self.selectedItemIndex = index;
+                
                 [self moveSelectedSegmentIndicatorToSegmentAtIndex:index animated:YES];
-                [self sendActionsForControlEvents:UIControlEventValueChanged];
+                
+                //Only send actions if selectedItemIndex has been changed
+                if (index != self.selectedItemIndex) {
+                    self.selectedItemIndex = index;
+                    [self sendActionsForControlEvents:UIControlEventValueChanged];
+                }
             }
         }
     }
