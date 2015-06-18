@@ -7,8 +7,11 @@
 //
 
 #import "BWSegment.h"
+#import "BWSegmentedControl.h"
 
-
+@interface BWSegment ()
+@property (nonatomic, weak) BWSegmentedControl *segmentedControl;
+@end
 
 @implementation BWSegment
 
@@ -50,12 +53,11 @@
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
-    
+    //Customize
     if (selected) {
-        self.titleLabel.textColor = [UIColor blueColor];
     }
     else{
-        self.titleLabel.textColor = [UIColor blackColor];
+        self.titleLabel.textColor = [UIColor whiteColor];
     }
     
 }
