@@ -1,6 +1,6 @@
 //
 //  BWSegment.m
-//  BWSegmentedControl
+//  MyTestApp
 //
 //  Created by Mendy Krinsky on 6/2/15.
 //  Copyright (c) 2015 Mendy Krinsky. All rights reserved.
@@ -21,7 +21,7 @@
         
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
-        self.titleLabel.textColor = [UIColor lightGrayColor];
+        self.titleLabel.font = [UIFont fontWithName:@"helvetica" size:13.0];
         [self addSubview:self.imageView];
         [self addSubview:self.titleLabel];
     }
@@ -34,23 +34,19 @@
     self.imageView.frame = CGRectMake(CGRectGetMinX(bounds),
                                       CGRectGetMinY(bounds),
                                       CGRectGetWidth(bounds),
-                                      CGRectGetHeight(bounds)/2.0f);
+                                      CGRectGetHeight(bounds)/1.5f);
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     if (self.imageHeight == 0) {
         _imageHeight = self.imageView.frame.size.height;
     }
     
-    self.imageView.image = [self.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.imageView.tintColor = [UIColor lightGrayColor];
-    
     self.titleLabel.frame = CGRectMake(self.imageView.center.x - CGRectGetWidth(bounds)/4.0f,
                                        CGRectGetHeight(self.imageView.frame),
                                        CGRectGetWidth(bounds)/2,
                                        CGRectGetHeight(bounds) - CGRectGetHeight(self.imageView.frame));
-
+    
 }
-
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
@@ -59,7 +55,7 @@
         self.titleLabel.textColor = [UIColor blueColor];
     }
     else{
-        self.titleLabel.textColor = [UIColor lightGrayColor];
+        self.titleLabel.textColor = [UIColor blackColor];
     }
     
 }
