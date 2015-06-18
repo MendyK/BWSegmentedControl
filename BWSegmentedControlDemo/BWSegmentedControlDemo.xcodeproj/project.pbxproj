@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2D259B1B336D710028F235 /* BWSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D25981B336D710028F235 /* BWSegment.m */; };
+		AC2D259C1B336D710028F235 /* BWSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D259A1B336D710028F235 /* BWSegmentedControl.m */; };
 		AC59163B1B2A6DCE00114389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59163A1B2A6DCE00114389 /* main.m */; };
 		AC59163E1B2A6DCE00114389 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC59163D1B2A6DCE00114389 /* AppDelegate.m */; };
 		AC5916411B2A6DCE00114389 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5916401B2A6DCE00114389 /* ViewController.m */; };
@@ -14,8 +16,6 @@
 		AC5916461B2A6DCE00114389 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5916451B2A6DCE00114389 /* Images.xcassets */; };
 		AC5916491B2A6DCF00114389 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5916471B2A6DCF00114389 /* LaunchScreen.xib */; };
 		AC5916551B2A6DCF00114389 /* BWSegmentedControlDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5916541B2A6DCF00114389 /* BWSegmentedControlDemoTests.m */; };
-		AC5916631B2A6E0600114389 /* BWSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5916601B2A6E0600114389 /* BWSegment.m */; };
-		AC5916641B2A6E0600114389 /* BWSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5916621B2A6E0600114389 /* BWSegmentedControl.m */; };
 		AC5916661B2A6ECF00114389 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5916651B2A6ECF00114389 /* user.png */; };
 		AC59166A1B2A6F2B00114389 /* user-group.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5916691B2A6F2B00114389 /* user-group.png */; };
 		AC59166C1B2A708300114389 /* image-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = AC59166B1B2A708300114389 /* image-alt.png */; };
@@ -32,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC2D25971B336D710028F235 /* BWSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSegment.h; sourceTree = "<group>"; };
+		AC2D25981B336D710028F235 /* BWSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSegment.m; sourceTree = "<group>"; };
+		AC2D25991B336D710028F235 /* BWSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSegmentedControl.h; sourceTree = "<group>"; };
+		AC2D259A1B336D710028F235 /* BWSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSegmentedControl.m; sourceTree = "<group>"; };
 		AC5916351B2A6DCE00114389 /* BWSegmentedControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWSegmentedControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5916391B2A6DCE00114389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC59163A1B2A6DCE00114389 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,10 +49,6 @@
 		AC59164E1B2A6DCF00114389 /* BWSegmentedControlDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWSegmentedControlDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5916531B2A6DCF00114389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC5916541B2A6DCF00114389 /* BWSegmentedControlDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BWSegmentedControlDemoTests.m; sourceTree = "<group>"; };
-		AC59165F1B2A6E0600114389 /* BWSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSegment.h; sourceTree = "<group>"; };
-		AC5916601B2A6E0600114389 /* BWSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSegment.m; sourceTree = "<group>"; };
-		AC5916611B2A6E0600114389 /* BWSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWSegmentedControl.h; sourceTree = "<group>"; };
-		AC5916621B2A6E0600114389 /* BWSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWSegmentedControl.m; sourceTree = "<group>"; };
 		AC5916651B2A6ECF00114389 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		AC5916691B2A6F2B00114389 /* user-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-group.png"; sourceTree = "<group>"; };
 		AC59166B1B2A708300114389 /* image-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-alt.png"; sourceTree = "<group>"; };
@@ -72,6 +72,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC2D25961B336D710028F235 /* Segmented Control */ = {
+			isa = PBXGroup;
+			children = (
+				AC2D25971B336D710028F235 /* BWSegment.h */,
+				AC2D25981B336D710028F235 /* BWSegment.m */,
+				AC2D25991B336D710028F235 /* BWSegmentedControl.h */,
+				AC2D259A1B336D710028F235 /* BWSegmentedControl.m */,
+			);
+			name = "Segmented Control";
+			path = "../../Segmented Control";
+			sourceTree = "<group>";
+		};
 		AC59162C1B2A6DCE00114389 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +112,7 @@
 				AC5916421B2A6DCE00114389 /* Main.storyboard */,
 				AC5916451B2A6DCE00114389 /* Images.xcassets */,
 				AC5916471B2A6DCF00114389 /* LaunchScreen.xib */,
-				AC59165E1B2A6E0600114389 /* Segmented Control */,
+				AC2D25961B336D710028F235 /* Segmented Control */,
 				AC5916381B2A6DCE00114389 /* Supporting Files */,
 			);
 			path = BWSegmentedControlDemo;
@@ -131,17 +143,6 @@
 				AC5916531B2A6DCF00114389 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC59165E1B2A6E0600114389 /* Segmented Control */ = {
-			isa = PBXGroup;
-			children = (
-				AC59165F1B2A6E0600114389 /* BWSegment.h */,
-				AC5916601B2A6E0600114389 /* BWSegment.m */,
-				AC5916611B2A6E0600114389 /* BWSegmentedControl.h */,
-				AC5916621B2A6E0600114389 /* BWSegmentedControl.m */,
-			);
-			path = "Segmented Control";
 			sourceTree = "<group>";
 		};
 		AC59166D1B2A763900114389 /* Resources */ = {
@@ -259,8 +260,8 @@
 			files = (
 				AC5916411B2A6DCE00114389 /* ViewController.m in Sources */,
 				AC59163E1B2A6DCE00114389 /* AppDelegate.m in Sources */,
-				AC5916641B2A6E0600114389 /* BWSegmentedControl.m in Sources */,
-				AC5916631B2A6E0600114389 /* BWSegment.m in Sources */,
+				AC2D259C1B336D710028F235 /* BWSegmentedControl.m in Sources */,
+				AC2D259B1B336D710028F235 /* BWSegment.m in Sources */,
 				AC59163B1B2A6DCE00114389 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +457,7 @@
 				AC59165A1B2A6DCF00114389 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC59165B1B2A6DCF00114389 /* Build configuration list for PBXNativeTarget "BWSegmentedControlDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +466,7 @@
 				AC59165D1B2A6DCF00114389 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
