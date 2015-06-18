@@ -18,10 +18,10 @@
     if (self) {
         _imageView = [[UIImageView alloc]initWithFrame:CGRectZero];
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-
+        
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
-
+        self.titleLabel.font = [UIFont fontWithName:@"helvetica" size:13.0];
         [self addSubview:self.imageView];
         [self addSubview:self.titleLabel];
     }
@@ -34,7 +34,7 @@
     self.imageView.frame = CGRectMake(CGRectGetMinX(bounds),
                                       CGRectGetMinY(bounds),
                                       CGRectGetWidth(bounds),
-                                      CGRectGetHeight(bounds)/2.0f);
+                                      CGRectGetHeight(bounds)/1.5f);
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     if (self.imageHeight == 0) {
@@ -45,7 +45,7 @@
                                        CGRectGetHeight(self.imageView.frame),
                                        CGRectGetWidth(bounds)/2,
                                        CGRectGetHeight(bounds) - CGRectGetHeight(self.imageView.frame));
-
+    
 }
 
 - (void)setSelected:(BOOL)selected{
