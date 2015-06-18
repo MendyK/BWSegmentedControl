@@ -57,7 +57,6 @@
     if (selected) {
     }
     else{
-        self.titleLabel.textColor = [UIColor whiteColor];
     }
     
 }

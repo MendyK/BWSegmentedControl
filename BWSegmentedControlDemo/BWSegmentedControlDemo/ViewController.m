@@ -28,7 +28,8 @@
     BWSegment *segment2 = [BWSegment new];
     segment2.imageView.image = [UIImage imageNamed:@"user-group"];
     segment2.titleLabel.text = @"Group";
-
+    
+    
     BWSegment *segment3 = [BWSegment new];
     segment3.imageView.image = [UIImage imageNamed:@"image-alt"];
     segment3.titleLabel.text = @"Globe";
