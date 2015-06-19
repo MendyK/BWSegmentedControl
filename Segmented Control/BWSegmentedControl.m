@@ -31,7 +31,6 @@
 - (instancetype)initWithItems:(NSArray *)items{
     self = [super initWithFrame:CGRectZero];
     if (self) {
-        
         self.backgroundColor = [UIColor clearColor];
         self.topColor = [UIColor whiteColor];
 

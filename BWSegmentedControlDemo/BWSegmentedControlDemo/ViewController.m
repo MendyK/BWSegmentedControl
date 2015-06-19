@@ -39,13 +39,14 @@
     segmentedControl.topColor = [UIColor grayColor];
     CGRect frame = self.view.frame;
     
-    segmentedControl.frame = CGRectMake(CGRectGetMinX(frame),
-                                        CGRectGetMidY(frame),
-                                        CGRectGetWidth(frame),
-                                        88);
+//    segmentedControl.frame = CGRectMake(CGRectGetMinX(frame),
+//                                        CGRectGetMidY(frame),
+//                                        CGRectGetWidth(frame),
+//                                        88);
     [segmentedControl addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segmentedControl];
-    
+//    [segmentedControl sizeToFit];
+    self.navigationItem.titleView = segmentedControl;
 }
 
 - (void)tapped: (BWSegmentedControl *)segmentedControl{
