@@ -106,7 +106,20 @@
 }
 
 
+- (CGSize)sizeThatFits:(CGSize)size{
+    
+    CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
+    self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
 
+    return CGSizeMake(segmentSize.width * [self.items count], segmentSize.height);
+
+    //Get BWSegment size
+    //
+    return CGSizeZero;
+}
+- (CGSize)intrinsicContentSize{
+    return [self sizeThatFits:self.bounds.size];
+}
 
 
 #pragma mark - Drawing

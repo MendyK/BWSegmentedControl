@@ -51,6 +51,14 @@
     
 }
 
+- (CGSize)sizeThatFits:(CGSize)size{
+    CGSize imageSize = [self.imageView sizeThatFits:size];
+
+    CGFloat imageHeight = imageSize.height / 1.5f;
+    
+    return CGSizeMake(imageSize.width, imageHeight);
+}
+
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
     //Customize
