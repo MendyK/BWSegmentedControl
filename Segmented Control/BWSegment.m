@@ -62,10 +62,8 @@
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
     //Customize
-    if (selected) {
+    if (!selected) {
+        self.titleLabel.textColor = [UIColor darkGrayColor];
     }
-    else{
-    }
-    
 }
 @end

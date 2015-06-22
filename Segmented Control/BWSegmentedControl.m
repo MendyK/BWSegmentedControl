@@ -111,7 +111,7 @@
     CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
 
-    return CGSizeMake(segmentSize.width * [self.items count], segmentSize.height);
+    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, segmentSize.height);
 
     //Get BWSegment size
     //
@@ -153,10 +153,13 @@
     for (BWSegment *item in self.items) {
         
         if (CGRectContainsPoint(item.frame, location)) {
+            
             NSUInteger selectedItemIndex = [self.items indexOfObject:item];
 
-            [self setSelectedItemIndex:selectedItemIndex animated:YES];
-            [self sendActionsForControlEvents:UIControlEventValueChanged];
+            if (selectedItemIndex != self.selectedItemIndex) {
+                [self setSelectedItemIndex:selectedItemIndex animated:YES];
+                [self sendActionsForControlEvents:UIControlEventValueChanged];
+            }
 
         }
     }
@@ -185,10 +188,11 @@
             BWSegment *item = self.items[index];
             
             if (CGRectContainsPoint(item.frame, self.selectedItemIndicator.center)) {
-                
-                self.selectedItemIndex = index;
-                [self moveSelectedSegmentIndicatorToSegmentAtIndex:index animated:YES];
-                [self sendActionsForControlEvents:UIControlEventValueChanged];
+                if (index != self.selectedItemIndex) {
+                    self.selectedItemIndex = index;
+                    [self moveSelectedSegmentIndicatorToSegmentAtIndex:index animated:YES];
+                    [self sendActionsForControlEvents:UIControlEventValueChanged];
+                }
             }
         }
     }

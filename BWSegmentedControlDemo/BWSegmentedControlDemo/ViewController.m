@@ -35,14 +35,8 @@
     segment3.titleLabel.text = @"Globe";
     
     BWSegmentedControl *segmentedControl = [[BWSegmentedControl alloc]initWithItems:@[ segment1, segment2, segment3]];
-//    segmentedControl.backgroundColor = [UIColor grayColor];
     segmentedControl.topColor = [UIColor grayColor];
-//    CGRect frame = self.view.frame;
-    
-//    segmentedControl.frame = CGRectMake(CGRectGetMinX(frame),
-//                                        CGRectGetMidY(frame),
-//                                        CGRectGetWidth(frame),
-//                                        88);
+
     [segmentedControl addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segmentedControl];
     [segmentedControl sizeToFit];
