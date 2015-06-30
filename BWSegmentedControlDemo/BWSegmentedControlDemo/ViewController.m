@@ -21,20 +21,8 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
 
-    BWSegment *segment1 = [BWSegment new];
-    segment1.imageView.image = [UIImage imageNamed:@"user"];
-    segment1.titleLabel.text = @"User";
-    
-    BWSegment *segment2 = [BWSegment new];
-    segment2.imageView.image = [UIImage imageNamed:@"user-group"];
-    segment2.titleLabel.text = @"Group";
-    
-    
-    BWSegment *segment3 = [BWSegment new];
-    segment3.imageView.image = [UIImage imageNamed:@"image-alt"];
-    segment3.titleLabel.text = @"Globe";
-    
-    BWSegmentedControl *segmentedControl = [[BWSegmentedControl alloc]initWithItems:@[ segment1, segment2, segment3]];
+    BWSegmentedControl *segmentedControl = [[BWSegmentedControl alloc]initWithImages:@[ [UIImage imageNamed:@"user"], [UIImage imageNamed:@"user-group"], [UIImage imageNamed:@"image-alt"]]
+                                                                              titles:@[ @"User", @"Group", @"Globe"]];
     segmentedControl.topColor = [UIColor grayColor];
 
     [segmentedControl addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];

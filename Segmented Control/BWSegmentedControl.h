@@ -13,6 +13,12 @@
 
 @interface BWSegmentedControl : UIControl
 - (instancetype)initWithItems:(NSArray *)items;
+
+///Images and titles must have the same amount of items
+- (instancetype)initWithImages: (NSArray *)images titles: (NSArray *)titles;
++ (instancetype)segmentedControlWithImages: (NSArray *)images titles: (NSArray *)titles;
+
+
 - (void)setSelectedItemIndex:(NSUInteger)selectedItemIndex animated: (BOOL) animated;
 
 @property (nonatomic, strong) NSArray *items;

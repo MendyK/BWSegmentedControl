@@ -60,6 +60,33 @@
 }
 
 
+- (instancetype) initWithImages:(NSArray *)images titles:(NSArray *)titles{
+    NSArray *segments = [self createSegmentsWithImages: images titles: titles];
+    self = [self initWithItems:segments];
+    return self;
+}
+
++ (instancetype)segmentedControlWithImages: (NSArray *)images titles: (NSArray *)titles{
+    return [[self alloc]initWithImages:images titles:titles];
+}
+
+///images and titles array must have same amount of objects
+- (NSArray *)createSegmentsWithImages: (NSArray *)images titles: (NSArray *)titles{
+    
+    if ([images count] != [titles count]) {
+        return nil;
+    }
+    
+    NSMutableArray *allSegments = [NSMutableArray array];
+    
+    for (NSInteger index = 0; index < [images count]; index++) {
+        BWSegment *segment = [BWSegment new];
+        segment.imageView.image = images[index];
+        segment.titleLabel.text = titles[index];
+        [allSegments addObject:segment];
+    }
+    return allSegments;
+}
 
 #pragma mark - Layout
 
