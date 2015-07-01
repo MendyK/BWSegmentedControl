@@ -101,7 +101,7 @@
     }
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
     self.selectedItemIndicator.layer.cornerRadius = self.selectedItemIndicatorCornerRadius;
-    [self setSelectedItemIndex:0 animated:NO moveIndicator:NO];
+    [self setSelectedItemIndex:self.selectedItemIndex animated:NO moveIndicator:NO];
 }
 
 
@@ -331,6 +331,8 @@
     if (moveIndicator) {
         [self moveSelectedSegmentIndicatorToSegmentAtIndex:self.selectedItemIndex animated:animated];
     }
+    [self setNeedsDisplay];
+
 }
 
 ///Private

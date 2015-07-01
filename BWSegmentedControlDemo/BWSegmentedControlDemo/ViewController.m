@@ -24,7 +24,7 @@
     BWSegmentedControl *segmentedControl = [[BWSegmentedControl alloc]initWithImages:@[ [UIImage imageNamed:@"user"], [UIImage imageNamed:@"user-group"], [UIImage imageNamed:@"image-alt"]]
                                                                               titles:@[ @"User", @"Group", @"Globe"]];
     segmentedControl.topColor = [UIColor grayColor];
-
+    [segmentedControl setSelectedItemIndex:1 animated:YES];
     [segmentedControl addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segmentedControl];
     [segmentedControl sizeToFit];
