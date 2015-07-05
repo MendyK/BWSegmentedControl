@@ -217,9 +217,10 @@
             if (CGRectContainsPoint(item.frame, self.selectedItemIndicator.center)) {
                 if (index != self.selectedItemIndex) {
                     self.selectedItemIndex = index;
-                    [self moveSelectedSegmentIndicatorToSegmentAtIndex:index animated:YES];
                     [self sendActionsForControlEvents:UIControlEventValueChanged];
                 }
+                [self moveSelectedSegmentIndicatorToSegmentAtIndex:index animated:YES];
+
             }
         }
     }
