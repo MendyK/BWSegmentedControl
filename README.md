@@ -23,7 +23,6 @@ NSArray *titles = @[@"First title", @"Second title"];
 Initialize the segmented control with those arrays and add as a target. Then call `sizeToFit` so it can decide its own size.
 ````smalltalk
     
-//Initialize
 BWSegmentedControl *segmentedControl = [BWSegmentedControl segmentedControlWithImages:images titles:titles];
 [segmentedControl addTarget:self action:@selector(segmentMoved:) forControlEvents:UIControlEventValueChanged];
 [segmentedControl sizeToFit];  
