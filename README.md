@@ -3,10 +3,9 @@ A segmented control with a ball indicator
 
 Partially inspired by [this post on dribbble](https://dribbble.com/shots/1737521-Settings-UI?list=searches&offset=141)
 
-![alt tag](https://raw.github.com/MendyK/BWSegmentedControl/master/demoImage.png)
+![alt tag](https://raw.github.com/MendyK/BWSegmentedControl/master/Demo images/gifCropped.gif)
 
-
-
+![alt tag](https://raw.github.com/MendyK/BWSegmentedControl/master/Demo images/demoImage.png)
 ##Getting started
 
 To start, create an array of images and an array of titles (make sure both arrays have the same number of items).
