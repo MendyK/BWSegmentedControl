@@ -13,28 +13,28 @@ To start, create an array of images and an array of titles (make sure both array
 
 ````smalltalk
 
-    UIImage *firstImage = [UIImage imageNamed:@"firstImage"];
-    UIImage *secondImage = [UIImage imageNamed:@"secondImage"];
+UIImage *firstImage = [UIImage imageNamed:@"firstImage"];
+UIImage *secondImage = [UIImage imageNamed:@"secondImage"];
     
-    NSArray *images = @[ firstImage, secondImage ];
-    NSArray *titles = @[@"First title", @"Second title"];
+NSArray *images = @[ firstImage, secondImage ];
+NSArray *titles = @[@"First title", @"Second title"];
     
 ````
 
 Initialize the segmented control with those arrays and add as a target. Then call `sizeToFit` so it can decide its own size.
 ````smalltalk
     
-    //Initialize
-    BWSegmentedControl *segmentedControl = [BWSegmentedControl segmentedControlWithImages:images titles:titles];
-    [segmentedControl addTarget:self action:@selector(segmentMoved:) forControlEvents:UIControlEventValueChanged];
-    [segmentedControl sizeToFit];  
+//Initialize
+BWSegmentedControl *segmentedControl = [BWSegmentedControl segmentedControlWithImages:images titles:titles];
+[segmentedControl addTarget:self action:@selector(segmentMoved:) forControlEvents:UIControlEventValueChanged];
+[segmentedControl sizeToFit];  
 ````
 
 
 Finally, add it to your view.
 
 ````smalltalk
-    self.navigationItem.titleView = segmentedControl;
+self.navigationItem.titleView = segmentedControl;
   ````
   
   
