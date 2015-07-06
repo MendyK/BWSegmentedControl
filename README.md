@@ -20,7 +20,7 @@ NSArray *titles = @[@"First title", @"Second title"];
     
 ````
 
-Initialize the segmented control with those arrays and add as a target. Then call `sizeToFit` so it can decide its own size.
+Initialize the segmented control with those arrays and add `self` as a target. Then call `sizeToFit` so it can decide its own size.
 ````smalltalk
     
 BWSegmentedControl *segmentedControl = [BWSegmentedControl segmentedControlWithImages:images titles:titles];
