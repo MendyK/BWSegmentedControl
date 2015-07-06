@@ -18,9 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        
     
     self.view.backgroundColor = [UIColor lightGrayColor];
-
     BWSegmentedControl *segmentedControl = [[BWSegmentedControl alloc]initWithImages:@[ [UIImage imageNamed:@"user"], [UIImage imageNamed:@"user-group"], [UIImage imageNamed:@"image-alt"]]
                                                                               titles:@[ @"User", @"Group", @"Globe"]];
     segmentedControl.topColor = [UIColor grayColor];

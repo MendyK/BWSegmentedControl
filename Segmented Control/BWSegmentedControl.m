@@ -1,10 +1,12 @@
 //
+//  BWSegmentedControl
+//
 //  BWSegmentedControl.m
-//  MyTestApp
 //
 //  Created by Mendy Krinsky on 6/2/15.
 //  Copyright (c) 2015 Mendy Krinsky. All rights reserved.
 //
+//  Licensed under the MIT license.
 
 #pragma mark - Imports
 
@@ -18,7 +20,6 @@
 @property (nonatomic, readonly) CGFloat itemWidth;
 @property (nonatomic, readonly) CGFloat upperViewHeight;
 @property (nonatomic, readonly) CGRect  topRect;
-@property (nonatomic) NSTimeInterval animationDuration;
 @property (nonatomic) CGFloat selectedItemIndicatorCornerRadius;
 @property (nonatomic) CGFloat topRectCornerRadius;
 @property (nonatomic) CGFloat interItemSpacing;
@@ -138,11 +139,9 @@
     CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
 
-    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, segmentSize.height);
-
+    
     //Get BWSegment size
-    //
-    return CGSizeZero;
+    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, segmentSize.height);
 }
 - (CGSize)intrinsicContentSize{
     return [self sizeThatFits:self.bounds.size];

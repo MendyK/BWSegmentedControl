@@ -1,15 +1,19 @@
 //
+//  BWSegmentedControl
+//
 //  BWSegment.h
-//  MyTestApp
 //
 //  Created by Mendy Krinsky on 6/2/15.
 //  Copyright (c) 2015 Mendy Krinsky. All rights reserved.
 //
-//  A UIControl with an image on top and text on the bottom (can be changed to UIButton)
-//
+//  Licensed under the MIT license.
 
 #import <UIKit/UIKit.h>
 
+
+/**
+  A UIControl with an image on top and text on the bottom
+ */
 @interface BWSegment : UIControl
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, readonly) UILabel     *titleLabel;
