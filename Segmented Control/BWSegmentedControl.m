@@ -74,9 +74,7 @@
 ///images and titles array must have same amount of objects
 - (NSArray *)createSegmentsWithImages: (NSArray *)images titles: (NSArray *)titles{
     
-    if ([images count] != [titles count]) {
-        return nil;
-    }
+    NSAssert([images count] == [titles count], @"The images and titles arrays must have the same number of objects");
     
     NSMutableArray *allSegments = [NSMutableArray array];
     
@@ -139,13 +137,11 @@
     CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
 
-    
-    //Get BWSegment size
-    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, segmentSize.height);
+    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, 44);
 }
-- (CGSize)intrinsicContentSize{
-    return [self sizeThatFits:self.bounds.size];
-}
+//- (CGSize)intrinsicContentSize{
+//    return [self sizeThatFits:self.bounds.size];
+//}
 
 
 #pragma mark - Drawing
@@ -346,6 +342,7 @@
         item.titleLabel.textColor = isSelectedItem ? self.selectedItemIndicatorColor : item.imageView.tintColor;
         item.selected = isSelectedItem ? YES : NO;
     }
+    [self setNeedsDisplay];
 }
 
 - (void)setSelectedItemIndicatorColor:(UIColor *)selectedItemIndicatorColor
@@ -354,6 +351,16 @@
     self.selectedItemIndicator.backgroundColor = _selectedItemIndicatorColor;
 }
 
+- (void)setSegmentImageTintColor:(UIColor *)segmentImageTintColor{
+    _segmentImageTintColor = segmentImageTintColor;
+    
+    for (BWSegment *item in self.items) {
+        UIImage *originalImage = item.imageView.image;
+        item.imageView.image = [originalImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        item.imageView.tintColor = _segmentImageTintColor;
+    }
+    [self setNeedsDisplay];
+}
 
 @end
 

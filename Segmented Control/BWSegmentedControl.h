@@ -78,4 +78,12 @@
  */
 @property (nonatomic) NSTimeInterval animationDuration;
 
+
+/**
+ Sets the tint color of the segments' images.
+ When set, the image rendering modes of each segment will change to `template`
+ */
+@property (nonatomic, strong) UIColor *segmentImageTintColor;
+
+
 @end

@@ -53,17 +53,15 @@
 
 - (CGSize)sizeThatFits:(CGSize)size{
     CGSize imageSize = [self.imageView sizeThatFits:size];
-
-    CGFloat imageHeight = imageSize.height / 1.5f;
-    
-    return CGSizeMake(imageSize.width, imageHeight);
+    CGSize labelSize = [self.titleLabel sizeThatFits:size];
+    return CGSizeMake(imageSize.width, imageSize.height - labelSize.height);
 }
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
     //Customize
-    if (!selected) {
-        self.titleLabel.textColor = [UIColor darkGrayColor];
-    }
+//    if (!selected) {
+//        self.titleLabel.textColor = [UIColor darkGrayColor];
+//    }
 }
 @end
