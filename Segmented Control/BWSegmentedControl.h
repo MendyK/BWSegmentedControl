@@ -15,7 +15,6 @@
  */
 @interface BWSegmentedControl : UIControl
 
-
 // -----
 // @name Methods
 // -----
@@ -26,27 +25,22 @@
  */
 - (instancetype)initWithItems:(NSArray *)items;
 
-
 /**
  Initializes a new segmented control.
  @discussion Images and titles must have the same amount of items.
 */
 - (instancetype)initWithImages: (NSArray *)images titles: (NSArray *)titles;
 
-
 /**
  Convenience initializer
  */
 + (instancetype)segmentedControlWithImages: (NSArray *)images titles: (NSArray *)titles;
 
-
 /**
  Sets the selected segment index
  
  */
-
 - (void)setSelectedItemIndex:(NSUInteger)selectedItemIndex animated: (BOOL) animated;
-
 
 // -----
 // @name Properties
@@ -77,7 +71,6 @@
  Time it takes for segments to move from one place to another.
  */
 @property (nonatomic) NSTimeInterval animationDuration;
-
 
 /**
  Sets the tint color of the segments' images.

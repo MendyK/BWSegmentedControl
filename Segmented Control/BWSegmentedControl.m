@@ -13,8 +13,8 @@
 #import "BWSegmentedControl.h"
 #import "BWSegment.h"
 
-
 @interface BWSegmentedControl()
+
 @property (nonatomic, strong) UIView *selectedItemIndicator;
 @property (nonatomic, readwrite) NSUInteger selectedItemIndex;
 @property (nonatomic, readonly) CGFloat itemWidth;
@@ -28,8 +28,8 @@
 
 @implementation BWSegmentedControl
 
-
-- (instancetype)initWithItems:(NSArray *)items{
+- (instancetype)initWithItems:(NSArray *)items
+{
     self = [super initWithFrame:CGRectZero];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -54,26 +54,25 @@
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
         tapGestureRecognizer.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tapGestureRecognizer];
-        
-        
     }
     return self;
 }
 
-
-- (instancetype) initWithImages:(NSArray *)images titles:(NSArray *)titles{
+- (instancetype) initWithImages:(NSArray *)images titles:(NSArray *)titles
+{
     NSArray *segments = [self createSegmentsWithImages: images titles: titles];
     self = [self initWithItems:segments];
     return self;
 }
 
-+ (instancetype)segmentedControlWithImages: (NSArray *)images titles: (NSArray *)titles{
++ (instancetype)segmentedControlWithImages: (NSArray *)images titles: (NSArray *)titles
+{
     return [[self alloc]initWithImages:images titles:titles];
 }
 
-///images and titles array must have same amount of objects
-- (NSArray *)createSegmentsWithImages: (NSArray *)images titles: (NSArray *)titles{
-    
+///images and titles array must have same number of objects
+- (NSArray *)createSegmentsWithImages: (NSArray *)images titles: (NSArray *)titles
+{
     NSAssert([images count] == [titles count], @"The images and titles arrays must have the same number of objects");
     
     NSMutableArray *allSegments = [NSMutableArray array];
@@ -89,9 +88,8 @@
 
 #pragma mark - Layout
 
-
-- (void)layoutSubviews{
-    
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     
     for (NSInteger i = 0; i < [self.items count]; i++) {
@@ -102,8 +100,6 @@
     self.selectedItemIndicator.layer.cornerRadius = self.selectedItemIndicatorCornerRadius;
     [self setSelectedItemIndex:self.selectedItemIndex animated:NO moveIndicator:NO];
 }
-
-
 
 - (CGRect)frameForItemAtIndex:(NSUInteger)index
 {
@@ -119,8 +115,8 @@
                       CGRectGetHeight(self.bounds));
 }
 
-- (CGRect)frameForIndicatorAtIndex: (NSUInteger)index{
-    
+- (CGRect)frameForIndicatorAtIndex: (NSUInteger)index
+{
     CGRect itemRect = [self frameForItemAtIndex:index];
     CGFloat itemCenter = itemRect.origin.x + [self itemWidth]/2;
     CGFloat indicatorX = itemCenter - self.upperViewHeight/2;
@@ -131,45 +127,28 @@
                       self.upperViewHeight);
 }
 
-
-- (CGSize)sizeThatFits:(CGSize)size{
-    
+- (CGSize)sizeThatFits:(CGSize)size
+{
     CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
 
     return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, 44);
 }
-//- (CGSize)intrinsicContentSize{
-//    return [self sizeThatFits:self.bounds.size];
-//}
-
 
 #pragma mark - Drawing
 
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     
     UIBezierPath *topPath = [UIBezierPath bezierPathWithRoundedRect:self.topRect cornerRadius:self.topRectCornerRadius];
     [self.topColor setFill];
     [topPath fill];
-    
-    //Shadow
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextAddPath(context, topPath.CGPath);
-//    CGContextSetLineWidth(context, 2.0);
-//    CGContextSetBlendMode(context, kCGBlendModeDestinationOut);
-//    CGContextSetShadowWithColor(context, CGSizeMake(1.0, 1.0), 2.0, [UIColor blackColor].CGColor);
-//    CGContextStrokePath(context);
-    
 }
-
-
-
-
 
 #pragma mark - Segment indicator
 
-
-- (void)tapGestureRecognized: (UITapGestureRecognizer *)tapGestureRecognizer{
+- (void)tapGestureRecognized: (UITapGestureRecognizer *)tapGestureRecognizer
+{
     CGPoint location = [tapGestureRecognizer locationInView:self];
     
     for (BWSegment *item in self.items) {
@@ -187,9 +166,9 @@
     }
 }
 
-- (void)panGestureRecognized:(UIPanGestureRecognizer *)panGestureRecognizer {
+- (void)panGestureRecognized:(UIPanGestureRecognizer *)panGestureRecognizer
+{
     CGPoint translation = [panGestureRecognizer translationInView:panGestureRecognizer.view.superview];
-    
     
     // Find the difference in horizontal position between the current and previous touches
     CGFloat xDiff = translation.x;
@@ -221,7 +200,8 @@
     }
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+{
     [super hitTest:point withEvent:event];
     if (CGRectContainsPoint(self.selectedItemIndicator.frame, point)) {
         return self.selectedItemIndicator;
@@ -229,13 +209,11 @@
     return self;
 }
 
-
-- (void)moveSelectedSegmentIndicatorToSegmentAtIndex:(NSUInteger)index animated:(BOOL)animated{
-
+- (void)moveSelectedSegmentIndicatorToSegmentAtIndex:(NSUInteger)index animated:(BOOL)animated
+{
     __weak typeof(self)weakSelf = self;
     
     void (^animationsBlock)(void) = ^{
-        
         weakSelf.selectedItemIndicator.frame = [weakSelf frameForIndicatorAtIndex:index];
         };
  
@@ -244,21 +222,7 @@
         return;
     }
     [UIView animateWithDuration:self.animationDuration animations:animationsBlock];
-    
-    /* //Bounce animation
-     
-    [UIView animateWithDuration:1
-                          delay:0.f
-         usingSpringWithDamping:0.7f
-          initialSpringVelocity:0.2f
-                        options:kNilOptions
-                     animations:animationsBlock
-                     completion:nil];
-     */
-
 }
-
-
 
 #pragma mark - Properties
 
@@ -282,9 +246,6 @@
     }
 }
 
-
-
-
 #pragma mark Top Rect
 
 - (CGRect)topRect{
@@ -305,9 +266,6 @@
     BWSegment *item = [self.items firstObject];
     return item.imageHeight;
 }
-
-
-
 
 #pragma mark selectedItemIndicator
 

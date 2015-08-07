@@ -11,6 +11,7 @@
 #import "BWSegment.h"
 
 @interface BWSegment ()
+
 @end
 
 @implementation BWSegment
@@ -57,11 +58,4 @@
     return CGSizeMake(imageSize.width, imageSize.height - labelSize.height);
 }
 
-- (void)setSelected:(BOOL)selected{
-    [super setSelected:selected];
-    //Customize
-//    if (!selected) {
-//        self.titleLabel.textColor = [UIColor darkGrayColor];
-//    }
-}
 @end
