@@ -19,13 +19,12 @@ NSArray *images = @[ firstImage, secondImage ];
 NSArray *titles = @[@"First title", @"Second title"];
     
 ````
-
-Initialize the segmented control with those arrays and add `self` as a target. Then call `sizeToFit` so it can decide its own size.
+Initialize the segmented control with those arrays and add `self` as a target.
 ````smalltalk
     
 BWSegmentedControl *segmentedControl = [BWSegmentedControl segmentedControlWithImages:images titles:titles];
 [segmentedControl addTarget:self action:@selector(segmentMoved:) forControlEvents:UIControlEventValueChanged];
-[segmentedControl sizeToFit];  
+//Set frame here
 ````
 
 
