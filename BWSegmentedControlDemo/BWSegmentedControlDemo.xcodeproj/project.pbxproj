@@ -16,9 +16,13 @@
 		AC5916461B2A6DCE00114389 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5916451B2A6DCE00114389 /* Images.xcassets */; };
 		AC5916491B2A6DCF00114389 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC5916471B2A6DCF00114389 /* LaunchScreen.xib */; };
 		AC5916551B2A6DCF00114389 /* BWSegmentedControlDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5916541B2A6DCF00114389 /* BWSegmentedControlDemoTests.m */; };
-		AC5916661B2A6ECF00114389 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5916651B2A6ECF00114389 /* user.png */; };
-		AC59166A1B2A6F2B00114389 /* user-group.png in Resources */ = {isa = PBXBuildFile; fileRef = AC5916691B2A6F2B00114389 /* user-group.png */; };
-		AC59166C1B2A708300114389 /* image-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = AC59166B1B2A708300114389 /* image-alt.png */; };
+		ACD7DB1C1B93DA78002C4A5D /* image-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB151B93DA78002C4A5D /* image-alt.png */; };
+		ACD7DB1D1B93DA78002C4A5D /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB161B93DA78002C4A5D /* lock.png */; };
+		ACD7DB1E1B93DA78002C4A5D /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB171B93DA78002C4A5D /* notification.png */; };
+		ACD7DB1F1B93DA78002C4A5D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB181B93DA78002C4A5D /* settings.png */; };
+		ACD7DB201B93DA78002C4A5D /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB191B93DA78002C4A5D /* unlock.png */; };
+		ACD7DB211B93DA78002C4A5D /* user-group.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB1A1B93DA78002C4A5D /* user-group.png */; };
+		ACD7DB221B93DA78002C4A5D /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD7DB1B1B93DA78002C4A5D /* user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +53,13 @@
 		AC59164E1B2A6DCF00114389 /* BWSegmentedControlDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BWSegmentedControlDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5916531B2A6DCF00114389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC5916541B2A6DCF00114389 /* BWSegmentedControlDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BWSegmentedControlDemoTests.m; sourceTree = "<group>"; };
-		AC5916651B2A6ECF00114389 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
-		AC5916691B2A6F2B00114389 /* user-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-group.png"; sourceTree = "<group>"; };
-		AC59166B1B2A708300114389 /* image-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-alt.png"; sourceTree = "<group>"; };
+		ACD7DB151B93DA78002C4A5D /* image-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-alt.png"; sourceTree = "<group>"; };
+		ACD7DB161B93DA78002C4A5D /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
+		ACD7DB171B93DA78002C4A5D /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		ACD7DB181B93DA78002C4A5D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		ACD7DB191B93DA78002C4A5D /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlock.png; sourceTree = "<group>"; };
+		ACD7DB1A1B93DA78002C4A5D /* user-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-group.png"; sourceTree = "<group>"; };
+		ACD7DB1B1B93DA78002C4A5D /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +129,7 @@
 		AC5916381B2A6DCE00114389 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC59166D1B2A763900114389 /* Resources */,
+				ACD7DB141B93DA78002C4A5D /* Resources */,
 				AC5916391B2A6DCE00114389 /* Info.plist */,
 				AC59163A1B2A6DCE00114389 /* main.m */,
 			);
@@ -145,15 +153,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AC59166D1B2A763900114389 /* Resources */ = {
+		ACD7DB141B93DA78002C4A5D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AC5916691B2A6F2B00114389 /* user-group.png */,
-				AC5916651B2A6ECF00114389 /* user.png */,
-				AC59166B1B2A708300114389 /* image-alt.png */,
+				ACD7DB151B93DA78002C4A5D /* image-alt.png */,
+				ACD7DB161B93DA78002C4A5D /* lock.png */,
+				ACD7DB171B93DA78002C4A5D /* notification.png */,
+				ACD7DB181B93DA78002C4A5D /* settings.png */,
+				ACD7DB191B93DA78002C4A5D /* unlock.png */,
+				ACD7DB1A1B93DA78002C4A5D /* user-group.png */,
+				ACD7DB1B1B93DA78002C4A5D /* user.png */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -236,10 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC5916441B2A6DCE00114389 /* Main.storyboard in Resources */,
-				AC59166C1B2A708300114389 /* image-alt.png in Resources */,
+				ACD7DB201B93DA78002C4A5D /* unlock.png in Resources */,
+				ACD7DB1F1B93DA78002C4A5D /* settings.png in Resources */,
+				ACD7DB1D1B93DA78002C4A5D /* lock.png in Resources */,
+				ACD7DB1E1B93DA78002C4A5D /* notification.png in Resources */,
+				ACD7DB1C1B93DA78002C4A5D /* image-alt.png in Resources */,
+				ACD7DB221B93DA78002C4A5D /* user.png in Resources */,
 				AC5916491B2A6DCF00114389 /* LaunchScreen.xib in Resources */,
-				AC5916661B2A6ECF00114389 /* user.png in Resources */,
-				AC59166A1B2A6F2B00114389 /* user-group.png in Resources */,
+				ACD7DB211B93DA78002C4A5D /* user-group.png in Resources */,
 				AC5916461B2A6DCE00114389 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
