@@ -56,15 +56,19 @@
                                                                                               @"Unlock",
                                                                                               @"Settings",
                                                                                               @"Note"]];
-    segmentedControlCenter.topColor = [UIColor darkGrayColor];
+    segmentedControlCenter.topColor = [UIColor orangeColor];
     segmentedControlCenter.selectedItemIndicatorColor = [UIColor redColor];
     segmentedControlCenter.segmentImageTintColor = [UIColor colorWithRed:0.000 green:0.502 blue:0.502 alpha:1.000];
     [segmentedControlCenter addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventValueChanged];
 
-    segmentedControlCenter.frame = CGRectMake(0.0,
-                                              CGRectGetMidY(self.view.bounds),
-                                              CGRectGetWidth(self.view.bounds),
-                                              60.0);
+    CGRect bounds = self.view.bounds;
+    
+    CGRect segmentedControlCenterFrame = CGRectZero;
+    segmentedControlCenterFrame.size = [segmentedControlCenter sizeThatFits:self.view.bounds.size];
+    segmentedControlCenterFrame.origin.x = CGRectGetMidX(bounds) - segmentedControlCenterFrame.size.width/2;
+    segmentedControlCenterFrame.origin.y = 80.0;
+    segmentedControlCenter.frame = segmentedControlCenterFrame;
+    
     [self.view addSubview:segmentedControlCenter];
 }
 

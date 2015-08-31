@@ -28,6 +28,8 @@
         self.titleLabel.font = [UIFont fontWithName:@"helvetica" size:13.0];
         [self addSubview:self.imageView];
         [self addSubview:self.titleLabel];
+        
+//        self.backgroundColor = [UIColor blackColor]
     }
     return self;
 }
@@ -49,7 +51,6 @@
                                        CGRectGetHeight(self.imageView.frame),
                                        CGRectGetWidth(bounds)/2,
                                        CGRectGetHeight(bounds) - CGRectGetHeight(self.imageView.frame));
-    
 }
 
 - (CGSize)sizeThatFits:(CGSize)size{

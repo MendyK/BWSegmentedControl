@@ -19,7 +19,7 @@
 @property (nonatomic, readwrite) NSUInteger selectedItemIndex;
 @property (nonatomic, readonly) CGFloat itemWidth;
 @property (nonatomic, readonly) CGFloat upperViewHeight;
-@property (nonatomic, readonly) CGRect  topRect;
+@property (nonatomic) CGRect  topRect;
 @property (nonatomic) CGFloat selectedItemIndicatorCornerRadius;
 @property (nonatomic) CGFloat topRectCornerRadius;
 @property (nonatomic) CGFloat interItemSpacing;
@@ -108,7 +108,6 @@
     self.interItemSpacing = interItemSpacing;
     
     CGFloat startX = (self.itemWidth + interItemSpacing) * index;
-    
     return CGRectMake(startX,
                       CGRectGetMinY(self.bounds),
                       self.itemWidth,
@@ -129,17 +128,16 @@
 
 - (CGSize)sizeThatFits:(CGSize)size
 {
-    CGSize segmentSize = [[self.items firstObject]sizeThatFits:size];
+    CGFloat segmentWidth = [[self.items firstObject]sizeThatFits:size].width;
     self.selectedItemIndicator.frame = [self frameForIndicatorAtIndex:self.selectedItemIndex];
-
-    return CGSizeMake(segmentSize.width * [self.items count] + self.interItemSpacing, 44);
+    
+    return CGSizeMake(segmentWidth * [self.items count] + self.interItemSpacing, 47);
 }
 
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect
 {
-    
     UIBezierPath *topPath = [UIBezierPath bezierPathWithRoundedRect:self.topRect cornerRadius:self.topRectCornerRadius];
     [self.topColor setFill];
     [topPath fill];
@@ -177,7 +175,7 @@
     CGRect newSegmentIndicatorFrame = self.selectedItemIndicator.frame;
     newSegmentIndicatorFrame.origin.x += xDiff;
     
-    if (CGRectContainsRect(CGRectInset(self.bounds, self.interItemSpacing, 0), newSegmentIndicatorFrame)) {
+    if (CGRectContainsRect(CGRectInset(self.topRect, self.interItemSpacing, 0), newSegmentIndicatorFrame)) {
         self.selectedItemIndicator.center = CGPointMake(self.selectedItemIndicator.center.x + xDiff, self.selectedItemIndicator.center.y);
     }
     
@@ -226,7 +224,8 @@
 
 #pragma mark - Properties
 
-- (CGFloat)itemWidth{
+- (CGFloat)itemWidth
+{
     return CGRectGetWidth(self.frame) / [self.items count];
 }
 
@@ -248,11 +247,22 @@
 
 #pragma mark Top Rect
 
-- (CGRect)topRect{
-    return CGRectMake(CGRectGetMinX(self.bounds),CGRectGetMinY(self.bounds), self.bounds.size.width, self.upperViewHeight);
+- (CGRect)topRect
+{
+    if (CGRectEqualToRect(_topRect, CGRectZero)) {
+        BWSegment *firstSegment = [self.items firstObject];
+        
+        _topRect = CGRectZero;
+        _topRect.origin.y = CGRectGetMinY(self.bounds);
+        _topRect.origin.x = firstSegment.titleLabel.frame.origin.x;
+        _topRect.size.height = self.upperViewHeight;
+        _topRect.size.width = CGRectGetWidth(self.bounds) - _topRect.origin.x * 2;
+    }
+    return _topRect;
 }
 
-- (CGFloat)topRectCornerRadius{
+- (CGFloat)topRectCornerRadius
+{
     return CGRectGetHeight(self.bounds)/2;
 }
 
