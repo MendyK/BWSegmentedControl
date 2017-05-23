@@ -6,7 +6,7 @@ Partially inspired by [this post on Dribbble](https://dribbble.com/shots/1737521
 ![alt tag](https://raw.github.com/MendyK/BWSegmentedControl/master/DemoImages/gifCropped.gif)
 
 ![alt tag](https://raw.github.com/MendyK/BWSegmentedControl/master/DemoImages/demoImage.png)
-##Getting started
+## Getting started
 
 To start, create an array of images and an array of titles (make sure both arrays have the same number of items).
 
@@ -35,10 +35,10 @@ self.navigationItem.titleView = segmentedControl;
   ````
   
   
-##CocoaPods
+## CocoaPods
 
 `pod 'BWSegmentedControl', :git => 'https://github.com/MendyK/BWSegmentedControl'`
-##License
+## License
 ```
   The MIT License (MIT)
 
